@@ -142,5 +142,7 @@ sns.barplot(x='Importance', y='Feature', data=feat_importance.head(15))
 plt.title('Top Features Predicting Salary')
 plt.tight_layout()
 plt.show()
+```
 
+### Results/ Findings
   
