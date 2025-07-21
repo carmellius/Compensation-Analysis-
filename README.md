@@ -55,6 +55,10 @@ def plot_salary_by_gender_education(df):
         labels={'salary': 'Annual Salary ($)', 'education': 'Highest Level of Education'}
     )
     fig.show()
+<img width="1413" height="525" alt="newplot" src="https://github.com/user-attachments/assets/217fc555-189b-4f50-9acb-51a09299e051" />
+
+<img width="1200" height="800" alt="Demographic  Visualization" src="https://github.com/user-attachments/assets/4c34b53a-9110-4db5-b59c-7908e4f78089" />
+
 
 Visualization 2: Additional Compensation by Experience and Gender
 agg_df_comp = df.groupby(['experience_overall', 'gender'], as_index=False)['additional_compensation'].median()
@@ -63,6 +67,9 @@ fig_add_comp = px.bar(
     barmode='group', title='Median Additional Compensation by Experience and Gender'
 )
 fig_add_comp.show()
+
+<img width="1413" height="525" alt="Additional Compensation" src="https://github.com/user-attachments/assets/84d56693-b927-40d6-a7f6-dcf5b634d149" />
+
 
 2. Answering: "What predictive frameworks are most effective?"
 We trained and evaluated four distinct machine learning models to determine the most effective framework for salary prediction. The models were rigorously evaluated on their ability to minimize prediction error (RMSE) and explain the variance in salary (R² score).
