@@ -139,4 +139,42 @@ Leverage Industry Choice: The data is unequivocal: industry choice is a massive 
 This project successfully translated a raw, public dataset into a set of clear, actionable insights. By applying a rigorous pipeline of data cleaning, visualization, and predictive modeling, we were able to quantify the precise impact of various professional and demographic factors on salary.
 The analysis confirms that while experience and education are legitimate and powerful drivers of compensation, their benefits are not distributed equally. Significant and persistent pay gaps based on gender and race remain deeply embedded in the professional landscape. The machine learning models did not just predict salaries; they provided a lens through which to understand the systemic biases that still exist. Ultimately, this project serves as a powerful reminder that achieving true workplace equity requires constant vigilance, transparent data analysis, and a commitment to building systems that reward skill and experience fairly for everyone.
 
+### Limitations
+1. Sampling and Self-Selection Bias:
+
+ - Limitation: The data comes from a voluntary online survey promoted on a specific website (AskAManager.org). This is not a random sample of the global or even national workforce. The respondents are likely to be readers of that blog, which may skew towards certain industries (e.g., office-based professional roles), demographics, and career-conscious individuals.
+Impact: The findings may not be generalizable to the entire working population. For example, the prevalence of certain industries or the reported salary ranges might be different from a truly random sample.
+
+2. Data Accuracy and Self-Reporting:
+ - Limitation: The data is entirely self-reported. There is no way to verify the accuracy of the salaries, job titles, or experience levels provided. Respondents may make errors, recall information incorrectly, or even intentionally misrepresent their data.
+Impact: This introduces a level of noise and potential inaccuracy into the dataset. While the large sample size helps mitigate the effect of individual errors, systemic reporting biases could still exist.
+
+3. Missing Contextual Variables:
+ - Limitation: The dataset, while rich, lacks several key variables that are known to influence salary. These include:
+   -- Company Size and Type: A salary for a "Software Engineer" at a 50-person startup is very different from one at a Fortune 500 corporation.
+   -- Cost of Living: The analysis uses country and state but does not control for the specific cost of living in a city (e.g., New York City vs. a rural town).
+   -- Performance Metrics: The model cannot account for individual performance, which is a major factor in bonuses and salary increases.
+      Impact: The model's predictive power is inherently capped because it cannot see this crucial context.
+
+4. Simplification of Demographic and Professional Categories:
+- Limitation: For the analysis to be effective, we had to group complex categories. For instance, dozens of specific job titles were grouped into a single industry like "Tech." Similarly, many distinct racial and ethnic identities were consolidated into broader categories like "Multiple races" or "Other."
+Impact: This simplification, while necessary for modeling, loses significant nuance. The experiences and salary outcomes of someone in "IT Support" versus "AI Research" are very different, but they may both fall under "Tech." Likewise, grouping diverse demographic groups together can mask the unique challenges and outcomes faced by each individual group.
+
+5. Model Performance and Unexplained Variance:
+ - Limitation: Our best-performing model (XGBoost) achieved an R² score of approximately 0.48.
+Impact: This means that 52% of the variation in salary is unexplained by the features in our model. This is a critical finding in itself. It highlights that salary is an incredibly complex outcome determined by factors we cannot measure, such as negotiation skills, specific team impact, networking, and even luck.
+
+6. Correlation vs. Causation:
+ - Limitation: The machine learning models are excellent at identifying complex patterns and correlations. However, they cannot prove causation.
+Impact: For example, the model shows a strong correlation between being a woman and having a lower predicted salary. It does not—and cannot—prove that gender causes the lower salary. It simply shows that after accounting for all other features, this correlation persists. The causal factors could be societal biases, negotiation dynamics, career interruptions, or other unmeasured variables. This is a crucial distinction for any data-driven conclusion.
+
+7. Lack of Longitudinal Data:
+ - Limitation: The dataset is a cross-sectional snapshot from a single year (2021). It does not track the same individuals over time.
+Impact: We can observe that people with more experience earn more, but we cannot analyze an individual's career progression or how their salary changed over time. This prevents any true time-series forecasting of salary growth for individuals.
+
+### References
+- Bertrand, M., & Mullainathan, S. (2004). Are Emily and Greg more employable than Lakisha and Jamal? A field experiment on labor market discrimination. American Economic Review, 94(4), 991–1013. https://doi.org/10.1257/0002828042002561
+- Binns, R., Veale, M., Van Kleek, M., & Shadbolt, N. (2018). 'It is reducing a human being to a percentage': Perceptions of justice in algorithmic decisions. Proceedings of the 2018 CHI Conference on Human Factors in Computing Systems. https://doi.org/10.1145/3173574.3173951
+- Blau, F. D., & Kahn, L. M. (2000). Gender differences in pay. Journal of Economic Perspectives, 14(4), 75–99. https://doi.org/10.1257/jep.14.4.75
+
 
